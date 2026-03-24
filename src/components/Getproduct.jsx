@@ -38,7 +38,6 @@ const Getproduct = () => {
       <h3 className="text-success">Available products</h3>
       {loading}
       {error}
-
       {/* Designing the products card */}
 
       {products.map((product) => (

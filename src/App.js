@@ -8,6 +8,7 @@ import Addproduct from "./components/Addproduct";
 import Getproduct from "./components/Getproduct";
 import Mpesapayment from "./components/Mpesapayment";
 import AboutUs from "./components/AboutUs";
+import ContactUs from "./components/ContactUs";
 
 function App() {
   return (
@@ -34,6 +35,9 @@ function App() {
           <Link to="/aboutus" className="btn btn-outline-success ms-2">
             About Us
           </Link>
+          <Link to="/contactus" className="btn btn-outline-success ms-2">
+            Contact Us
+          </Link>
         </nav>
         <Routes>
           <Route path="/signup" element={<Signup />} />
@@ -41,6 +45,7 @@ function App() {
           <Route path="/addproduct" element={<Addproduct />} />
           <Route path="/" element={<Getproduct />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/contactus" element={<ContactUs />} />
           <Route path="/makepayment" element={<Mpesapayment />} />
         </Routes>
       </div>

@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import image from "../logo.svg";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../cart/CartContext";
 const Getproduct = () => {
+  const { addToCart } = useCart();
   // Declaring state variables
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState("");
@@ -58,12 +60,22 @@ const Getproduct = () => {
               <p className="text-muted">{product.product_description}</p>
               <b className="text-warning">KES. {product.product_cost}</b>
               <br />
-              <button
-                className="btn btn-dark mt-2 w-100"
-                onClick={() => navigate("/makepayment", { state: { product } })}
-              >
-                Purchase now
-              </button>
+              <div className="d-grid gap-2 mt-2">
+                <button
+                  className="btn btn-success w-100"
+                  onClick={() => addToCart(product)}
+                >
+                  Add to cart
+                </button>
+                <button
+                  className="btn btn-dark w-100"
+                  onClick={() =>
+                    navigate("/makepayment", { state: { product } })
+                  }
+                >
+                  Purchase now
+                </button>
+              </div>
             </div>
           </div>
         </div>
